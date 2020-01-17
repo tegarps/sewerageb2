@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="data/PVCDN450TS_0.js"></script>
+        <script src="data/PVCDN250TS_1.js"></script>
+        <script src="data/PVCDN200TS_2.js"></script>
+        <script src="data/PVCDN200_3.js"></script>
+        <script src="data/PVCDN160_4.js"></script>
+        <script src="data/bangunan_5.js"></script>
+        <script src="data/titik_manhole_6.js"></script>
+        <script src="data/jalan_7.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:25, minZoom:1
+        }).fitBounds([[-5.169491098235376,119.4017114051929],[-5.15189491625247,119.43350059567655]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_PVCDN450TS_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ELEVATION</th>\
+                        <td>' + (feature.properties['ELEVATION'] !== null ? Autolinker.link(feature.properties['ELEVATION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">material</th>\
+                        <td>' + (feature.properties['material'] !== null ? Autolinker.link(feature.properties['material'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">diameter</th>\
+                        <td>' + (feature.properties['diameter'] !== null ? Autolinker.link(feature.properties['diameter'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">panjang</th>\
+                        <td>' + (feature.properties['panjang'] !== null ? Autolinker.link(feature.properties['panjang'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PVCDN450TS_0_0() {
+            return {
+                pane: 'pane_PVCDN450TS_0',
+                opacity: 1,
+                color: 'rgba(148,0,246,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PVCDN450TS_0');
+        map.getPane('pane_PVCDN450TS_0').style.zIndex = 400;
+        map.getPane('pane_PVCDN450TS_0').style['mix-blend-mode'] = 'normal';
+        var layer_PVCDN450TS_0 = new L.geoJson(json_PVCDN450TS_0, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PVCDN450TS_0',
+            layerName: 'layer_PVCDN450TS_0',
+            pane: 'pane_PVCDN450TS_0',
+            onEachFeature: pop_PVCDN450TS_0,
+            style: style_PVCDN450TS_0_0,
+        });
+        bounds_group.addLayer(layer_PVCDN450TS_0);
+        map.addLayer(layer_PVCDN450TS_0);
+        function pop_PVCDN250TS_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ELEVATION</th>\
+                        <td>' + (feature.properties['ELEVATION'] !== null ? Autolinker.link(feature.properties['ELEVATION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">material</th>\
+                        <td>' + (feature.properties['material'] !== null ? Autolinker.link(feature.properties['material'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">diameter</th>\
+                        <td>' + (feature.properties['diameter'] !== null ? Autolinker.link(feature.properties['diameter'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">panjang</th>\
+                        <td>' + (feature.properties['panjang'] !== null ? Autolinker.link(feature.properties['panjang'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PVCDN250TS_1_0() {
+            return {
+                pane: 'pane_PVCDN250TS_1',
+                opacity: 1,
+                color: 'rgba(0,25,255,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PVCDN250TS_1');
+        map.getPane('pane_PVCDN250TS_1').style.zIndex = 401;
+        map.getPane('pane_PVCDN250TS_1').style['mix-blend-mode'] = 'normal';
+        var layer_PVCDN250TS_1 = new L.geoJson(json_PVCDN250TS_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PVCDN250TS_1',
+            layerName: 'layer_PVCDN250TS_1',
+            pane: 'pane_PVCDN250TS_1',
+            onEachFeature: pop_PVCDN250TS_1,
+            style: style_PVCDN250TS_1_0,
+        });
+        bounds_group.addLayer(layer_PVCDN250TS_1);
+        map.addLayer(layer_PVCDN250TS_1);
+        function pop_PVCDN200TS_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ELEVATION</th>\
+                        <td>' + (feature.properties['ELEVATION'] !== null ? Autolinker.link(feature.properties['ELEVATION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">material</th>\
+                        <td>' + (feature.properties['material'] !== null ? Autolinker.link(feature.properties['material'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">diameter</th>\
+                        <td>' + (feature.properties['diameter'] !== null ? Autolinker.link(feature.properties['diameter'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">panjang</th>\
+                        <td>' + (feature.properties['panjang'] !== null ? Autolinker.link(feature.properties['panjang'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PVCDN200TS_2_0() {
+            return {
+                pane: 'pane_PVCDN200TS_2',
+                opacity: 1,
+                color: 'rgba(219,30,42,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PVCDN200TS_2');
+        map.getPane('pane_PVCDN200TS_2').style.zIndex = 402;
+        map.getPane('pane_PVCDN200TS_2').style['mix-blend-mode'] = 'normal';
+        var layer_PVCDN200TS_2 = new L.geoJson(json_PVCDN200TS_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PVCDN200TS_2',
+            layerName: 'layer_PVCDN200TS_2',
+            pane: 'pane_PVCDN200TS_2',
+            onEachFeature: pop_PVCDN200TS_2,
+            style: style_PVCDN200TS_2_0,
+        });
+        bounds_group.addLayer(layer_PVCDN200TS_2);
+        map.addLayer(layer_PVCDN200TS_2);
+        function pop_PVCDN200_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ELEVATION</th>\
+                        <td>' + (feature.properties['ELEVATION'] !== null ? Autolinker.link(feature.properties['ELEVATION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">material</th>\
+                        <td>' + (feature.properties['material'] !== null ? Autolinker.link(feature.properties['material'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">diameter</th>\
+                        <td>' + (feature.properties['diameter'] !== null ? Autolinker.link(feature.properties['diameter'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">panjang</th>\
+                        <td>' + (feature.properties['panjang'] !== null ? Autolinker.link(feature.properties['panjang'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PVCDN200_3_0() {
+            return {
+                pane: 'pane_PVCDN200_3',
+                opacity: 1,
+                color: 'rgba(255,0,4,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PVCDN200_3');
+        map.getPane('pane_PVCDN200_3').style.zIndex = 403;
+        map.getPane('pane_PVCDN200_3').style['mix-blend-mode'] = 'normal';
+        var layer_PVCDN200_3 = new L.geoJson(json_PVCDN200_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PVCDN200_3',
+            layerName: 'layer_PVCDN200_3',
+            pane: 'pane_PVCDN200_3',
+            onEachFeature: pop_PVCDN200_3,
+            style: style_PVCDN200_3_0,
+        });
+        bounds_group.addLayer(layer_PVCDN200_3);
+        map.addLayer(layer_PVCDN200_3);
+        function pop_PVCDN160_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ELEVATION</th>\
+                        <td>' + (feature.properties['ELEVATION'] !== null ? Autolinker.link(feature.properties['ELEVATION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">material</th>\
+                        <td>' + (feature.properties['material'] !== null ? Autolinker.link(feature.properties['material'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">diameter</th>\
+                        <td>' + (feature.properties['diameter'] !== null ? Autolinker.link(feature.properties['diameter'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">panjang</th>\
+                        <td>' + (feature.properties['panjang'] !== null ? Autolinker.link(feature.properties['panjang'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PVCDN160_4_0() {
+            return {
+                pane: 'pane_PVCDN160_4',
+                opacity: 1,
+                color: 'rgba(48,229,245,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PVCDN160_4');
+        map.getPane('pane_PVCDN160_4').style.zIndex = 404;
+        map.getPane('pane_PVCDN160_4').style['mix-blend-mode'] = 'normal';
+        var layer_PVCDN160_4 = new L.geoJson(json_PVCDN160_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PVCDN160_4',
+            layerName: 'layer_PVCDN160_4',
+            pane: 'pane_PVCDN160_4',
+            onEachFeature: pop_PVCDN160_4,
+            style: style_PVCDN160_4_0,
+        });
+        bounds_group.addLayer(layer_PVCDN160_4);
+        map.addLayer(layer_PVCDN160_4);
+        function pop_bangunan_5(feature, layer) {
+        }
+
+        function style_bangunan_5_0() {
+            return {
+                pane: 'pane_bangunan_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(233,228,177,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_bangunan_5');
+        map.getPane('pane_bangunan_5').style.zIndex = 405;
+        map.getPane('pane_bangunan_5').style['mix-blend-mode'] = 'normal';
+        var layer_bangunan_5 = new L.geoJson(json_bangunan_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bangunan_5',
+            layerName: 'layer_bangunan_5',
+            pane: 'pane_bangunan_5',
+            onEachFeature: pop_bangunan_5,
+            style: style_bangunan_5_0,
+        });
+        bounds_group.addLayer(layer_bangunan_5);
+        map.addLayer(layer_bangunan_5);
+        function pop_titik_manhole_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">no</th>\
+                        <td>' + (feature.properties['no'] !== null ? Autolinker.link(feature.properties['no'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">x</th>\
+                        <td>' + (feature.properties['x'] !== null ? Autolinker.link(feature.properties['x'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">y</th>\
+                        <td>' + (feature.properties['y'] !== null ? Autolinker.link(feature.properties['y'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">z</th>\
+                        <td>' + (feature.properties['z'] !== null ? Autolinker.link(feature.properties['z'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">no_manhole</th>\
+                        <td>' + (feature.properties['no_manhole'] !== null ? Autolinker.link(feature.properties['no_manhole'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_titik_manhole_6_0() {
+            return {
+                pane: 'pane_titik_manhole_6',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_titik_manhole_6');
+        map.getPane('pane_titik_manhole_6').style.zIndex = 406;
+        map.getPane('pane_titik_manhole_6').style['mix-blend-mode'] = 'normal';
+        var layer_titik_manhole_6 = new L.geoJson(json_titik_manhole_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_titik_manhole_6',
+            layerName: 'layer_titik_manhole_6',
+            pane: 'pane_titik_manhole_6',
+            onEachFeature: pop_titik_manhole_6,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_titik_manhole_6_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_titik_manhole_6);
+        map.addLayer(layer_titik_manhole_6);
+        function pop_jalan_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FID'] !== null ? Autolinker.link(feature.properties['FID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_jalan_7_0() {
+            return {
+                pane: 'pane_jalan_7',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_jalan_7');
+        map.getPane('pane_jalan_7').style.zIndex = 407;
+        map.getPane('pane_jalan_7').style['mix-blend-mode'] = 'normal';
+        var layer_jalan_7 = new L.geoJson(json_jalan_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_jalan_7',
+            layerName: 'layer_jalan_7',
+            pane: 'pane_jalan_7',
+            onEachFeature: pop_jalan_7,
+            style: style_jalan_7_0,
+        });
+        bounds_group.addLayer(layer_jalan_7);
+        map.addLayer(layer_jalan_7);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/jalan_7.png" /> jalan': layer_jalan_7,'<img src="legend/titik_manhole_6.png" /> titik_manhole': layer_titik_manhole_6,'<img src="legend/bangunan_5.png" /> bangunan': layer_bangunan_5,'<img src="legend/PVCDN160_4.png" /> PVC DN 160': layer_PVCDN160_4,'<img src="legend/PVCDN200_3.png" /> PVC DN 200': layer_PVCDN200_3,'<img src="legend/PVCDN200TS_2.png" /> PVC DN 200 TS': layer_PVCDN200TS_2,'<img src="legend/PVCDN250TS_1.png" /> PVC DN 250 TS': layer_PVCDN250TS_1,'<img src="legend/PVCDN450TS_0.png" /> PVC DN 450 TS': layer_PVCDN450TS_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        resetLabels([layer_titik_manhole_6]);
+        map.on("zoomend", function(){
+            resetLabels([layer_titik_manhole_6]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_titik_manhole_6]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_titik_manhole_6]);
+        });
+        </script>
+    </body>
+</html>
